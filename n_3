@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int f(int n) {
+	if (n > 0) {
+	    static int a=2, sum = 0;
+		for (a; a <= n; a++) {
+		for (int i=1; i < a; i++) {
+			if (a / i == 1) {
+				sum++;
+			}
+			}
+		if ((sum<3)&&(n%a==0)) {
+			cout << a << " ";
+			n = n / a;
+			f(n);
+		}
+	}
+	}
+	return 0;
+}
+int main() {
+	int n;
+	cin >> n;
+	f(n);
+	system("pause");
+	return 0;
+}
